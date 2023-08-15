@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MarketSample</string>
+    <string name="title_products">Products</string>
+    <string name="title_promo">Promo</string>
+    <string name="layered_activity">Layered Activity</string>
+    <string name="start_activity">Start Activity</string>
+    <string name="clean_activity">Clean Activity</string>
+</resources>
