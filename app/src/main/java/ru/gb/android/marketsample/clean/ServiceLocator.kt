@@ -2,7 +2,7 @@ package ru.gb.android.marketsample.clean
 
 import android.content.Context
 
-object Injector {
+object ServiceLocator {
 
     lateinit var applicationContext: Context
 }

@@ -18,7 +18,7 @@ import ru.gb.android.marketsample.start.data.api.PromoApiService
 import ru.gb.android.marketsample.start.data.storage.PromoLocalDataSource
 import ru.gb.android.marketsample.start.data.repository.PromoRepository
 
-object Injector {
+object ServiceLocator {
 
     const val ENDPOINT = "https://makzimi.github.io/"
 

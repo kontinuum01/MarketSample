@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import ru.gb.android.marketsample.databinding.FragmentProductsBinding
-import ru.gb.android.marketsample.start.Injector
+import ru.gb.android.marketsample.start.ServiceLocator
 import ru.gb.android.marketsample.start.presentation.adapter.ProductsAdapter
 
 class ProductsFragment : Fragment() {
@@ -26,7 +26,7 @@ class ProductsFragment : Fragment() {
 
     private val adapter = ProductsAdapter()
     private val viewModel: ProductsViewModel by viewModels(
-        factoryProducer = { Injector.provideViewModelFactory() }
+        factoryProducer = { ServiceLocator.provideViewModelFactory() }
     )
 
     override fun onCreateView(

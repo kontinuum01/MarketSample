@@ -28,7 +28,7 @@ import ru.gb.android.marketsample.layered.features.products.domain.ConsumeProduc
 import ru.gb.android.marketsample.layered.features.products.presentation.ProductVOFactory
 import ru.gb.android.marketsample.layered.features.promo.presentation.PromoVOMapper
 
-object Injector {
+object ServiceLocator {
 
     const val ENDPOINT = "https://makzimi.github.io/"
 

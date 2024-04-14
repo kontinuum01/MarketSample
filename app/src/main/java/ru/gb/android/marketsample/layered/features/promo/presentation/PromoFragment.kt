@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import ru.gb.android.marketsample.databinding.FragmentPromoBinding
-import ru.gb.android.marketsample.layered.Injector
+import ru.gb.android.marketsample.layered.ServiceLocator
 import ru.gb.android.marketsample.layered.features.promo.presentation.adapter.PromoAdapter
 
 class PromoFragment : Fragment() {
@@ -26,7 +26,7 @@ class PromoFragment : Fragment() {
 
     private val adapter = PromoAdapter()
     private val viewModel: PromoViewModel by viewModels(
-        factoryProducer = { Injector.provideViewModelFactory() }
+        factoryProducer = { ServiceLocator.provideViewModelFactory() }
     )
 
     override fun onCreateView(

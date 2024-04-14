@@ -1,15 +1,15 @@
 package ru.gb.android.marketsample
 
 import android.app.Application
-import ru.gb.android.marketsample.layered.Injector as LayeredInjector
-import ru.gb.android.marketsample.start.Injector as StartInjector
-import ru.gb.android.marketsample.clean.Injector as CleanInjector
+import ru.gb.android.marketsample.start.ServiceLocator as StartServiceLocator
+import ru.gb.android.marketsample.layered.ServiceLocator as LayeredServiceLocator
+import ru.gb.android.marketsample.clean.ServiceLocator as CleanServiceLocator
 
 class MarketSampleApp: Application() {
     override fun onCreate() {
         super.onCreate()
-        LayeredInjector.applicationContext = this
-        StartInjector.applicationContext = this
-        CleanInjector.applicationContext = this
+        LayeredServiceLocator.applicationContext = this
+        StartServiceLocator.applicationContext = this
+        CleanServiceLocator.applicationContext = this
     }
 }
