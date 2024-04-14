@@ -5,8 +5,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -41,7 +41,7 @@ object ServiceLocator {
             val newPromoRepository = PromoRepository(
                 promoLocalDataSource = providePromoLocalDataSource(),
                 promoApiService = providePromoApiService(),
-                coroutineScope = provideCoroutineScope(),
+                coroutineDispatcher = provideIOCoroutineDispatcher(),
             )
             promoRepositorySingleton = newPromoRepository
             newPromoRepository
@@ -64,15 +64,15 @@ object ServiceLocator {
             val newProductRepository = ProductRepository(
                 productLocalDataSource = provideProductLocalDataSource(),
                 productApiService = provideProductApiService(),
-                coroutineScope = provideCoroutineScope(),
+                coroutineDispatcher = provideIOCoroutineDispatcher(),
             )
             productRepositorySingleton = newProductRepository
             newProductRepository
         }
     }
 
-    private fun provideCoroutineScope(): CoroutineScope {
-        return CoroutineScope(SupervisorJob())
+    private fun provideIOCoroutineDispatcher(): CoroutineDispatcher {
+        return Dispatchers.IO
     }
 
     private fun provideOkHttpClient(): OkHttpClient {
