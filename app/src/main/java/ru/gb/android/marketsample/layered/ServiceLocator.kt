@@ -30,7 +30,7 @@ import ru.gb.android.marketsample.layered.features.promo.presentation.PromoVOMap
 
 object ServiceLocator {
 
-    const val ENDPOINT = "https://makzimi.github.io/"
+    private const val ENDPOINT = "https://makzimi.github.io/"
 
     lateinit var applicationContext: Context
 
